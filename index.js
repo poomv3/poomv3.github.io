@@ -1,7 +1,7 @@
 function troll() {
     let location = document.querySelector('.troll');
-    let randX = Math.floor(Math.random() * (100));
-    let randY = Math.floor(Math.random() * (100));
+    let randX = Math.floor((Math.random() * 300) + 150);
+    let randY = Math.floor((Math.random() * 300) + 100);
     let randSign = Math.floor(Math.random() * (2));
     let rect = location.getBoundingClientRect() // Y
     switch (randSign) {
@@ -40,6 +40,9 @@ function spongebob() {
     text.classList.add('win-text');
     text.innerText = "you win.";
     body.append(text);
+
+    let btn = document.querySelector('.troll');
+    btn.remove();
 
 }
 
