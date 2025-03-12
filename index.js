@@ -1,3 +1,29 @@
+function spawnButton() {
+    let mode = document.querySelectorAll('.text');
+    console.log(mode);
+    let difficulty = document.querySelector('.difficulty');
+    let btn = document.createElement('div');
+    btn.classList.add('troll');
+
+    let text = document.createElement('p');
+    text.style.margin = 'auto';
+    text.innerText = 'Click me!';
+    btn.append(text);
+
+    let body = document.querySelector('body');
+    console.log(body);
+    body.append(btn);
+
+    for (let x = 0; x < mode.length; x++) {
+        if (mode.getAttribute('id') == 'hard') {
+            body.style.cursor = 'none';
+        }
+    }
+    
+
+    difficulty.remove();
+}
+
 function troll() {
     let location = document.querySelector('.troll');
     let randX = Math.floor((Math.random() * 300) + 150);
@@ -26,7 +52,8 @@ function troll() {
     }
 }
 
-let trollClick = document.querySelector('.troll');
+let clickEasy = document.querySelector('#easy').addEventListener("click", spawnButton);
+let clickHard = document.querySelector('#hard').addEventListener("click", spawnButton);
 
 function spongebob() {
     let body = document.querySelector('div').parentElement;
@@ -46,5 +73,4 @@ function spongebob() {
 
 }
 
-trollClick.addEventListener("click", spongebob);
-// trollHover.addEventListener("onmouseover", spongebob);
+trollHover.addEventListener("onmouseover", troll);

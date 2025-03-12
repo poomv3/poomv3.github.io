@@ -36,6 +36,33 @@ body {
     margin: auto;
 }
 
+.difficulty {
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.text {
+    border: 2px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    user-select: none;
+}
+
+.text:hover {
+    background-color: brown;
+    cursor: pointer;
+}
+
 .troll {
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -43,7 +70,7 @@ body {
     text-align: center;
     margin: auto;
     width: 100px;
-    height:50px;
+    height: 50px;
     background-color: red;
     border-radius: 10px;
     user-select: none;
