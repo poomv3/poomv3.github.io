@@ -5,6 +5,8 @@ body {
 }
 
 .image {
+    max-width: 1284px;
+    max-height: 1000px;
     top:0px;
     right: 0;
     left: 0;
@@ -13,6 +15,14 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 10;
+}
+
+.win-text {
+    position: absolute;
+    top:0;
+    right: 0;
+    font-size: 300%;
+    padding: 50px;
 }
 
 .box {
