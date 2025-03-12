@@ -5,8 +5,7 @@ body {
 }
 
 .image {
-    max-width: 1284px;
-    max-height: 1000px;
+    height: 900px;
     top:0px;
     right: 0;
     left: 0;
@@ -14,20 +13,25 @@ body {
     position: absolute;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index: 1;
 }
 
 .win-text {
     position: absolute;
-    top:0;
-    right: 0;
+    top: 200px;
+    left: 30px; 
+    margin: auto;
     font-size: 300%;
-    padding: 50px;
+    padding:10px;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    z-index: 2;
 }
 
 .box {
-    height: 100vh;
-    width: 100vw;
+    height: 95vh;
+    width: 95vw;
     display: flex;
     margin: auto;
 }
@@ -42,4 +46,6 @@ body {
     height:50px;
     background-color: red;
     border-radius: 10px;
+    user-select: none;
+    cursor: pointer;
 }
