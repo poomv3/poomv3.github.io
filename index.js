@@ -1,35 +1,7 @@
-function spawnButton() {
-    let mode = document.querySelectorAll('.text');
-    console.log(mode);
-    let difficulty = document.querySelector('.difficulty');
-    let btn = document.createElement('div');
-    btn.classList.add('troll');
-
-    let text = document.createElement('p');
-    text.style.margin = 'auto';
-    text.innerText = 'Click me!';
-    btn.append(text);
-
-    let body = document.querySelector('body');
-    console.log(body);
-    body.append(btn);
-
-    for (let x = 0; x < mode.length; x++) {
-        if (mode.getAttribute('id') == 'hard') {
-            body.style.cursor = 'none';
-        }
-    }
-    
-
-    difficulty.remove();
-}
-
-function troll() {
-    let location = document.querySelector('.troll');
+function randomCoords(location) {
     let randX = Math.floor((Math.random() * 300) + 150);
     let randY = Math.floor((Math.random() * 300) + 100);
     let randSign = Math.floor(Math.random() * (2));
-    let rect = location.getBoundingClientRect() // Y
     switch (randSign) {
         case 0:
             randX *= -1;
@@ -42,18 +14,108 @@ function troll() {
             break;
     }
     location.style.transform = "translateY(" + randY + "px)" + "translateX(" + randX + "px)";
-    console.log("RandY = "+randY);
-    console.log("RandX = "+randX);
-    let visibleOnX = rect.x >= 0 && rect.right <= window.innerWidth;
-    let visibleOnY = rect.top >= 0 && rect.bottom <= window.innerHeight;
-    console.log(visibleOnX && visibleOnY);
-    if (visibleOnX && visibleOnY == true) {
-        console.log("true");
+}
+
+
+function hard() {
+    let hard = document.querySelector('#hard');
+    id = hard.getAttribute('id');
+    spawnButton(id);
+}
+
+function medium() {
+    let medium = document.querySelector('#medium');
+    id = medium.getAttribute('id');
+    spawnButton(id);
+}
+
+function easy() {
+    let easy = document.querySelector('#easy');
+    id = easy.getAttribute('id');
+    spawnButton(id);
+}
+
+function spawnButton(id) {
+    let difficulty = document.querySelector('.difficulty');
+    let btn = document.createElement('div');
+    btn.classList.add('troll');
+
+    btn.addEventListener('mouseover', troll);
+    btn.addEventListener('click',spongebob);
+
+    let text = document.createElement('p');
+    text.style.margin = 'auto';
+    text.innerText = 'Click me!';
+    btn.append(text);
+
+    let body = document.querySelector('body');
+    console.log(body);
+
+    let box = document.querySelector('.box');
+    box.append(btn);
+
+
+    if (id == 'medium') {
+        body.style.cursor = 'none';
+    }
+    
+    if (id == 'hard') {
+        for (let x = 0; x < 4; x++) {
+
+            let fakeBtn = document.createElement('div');
+            fakeBtn.classList.add('trollFake');
+
+            fakeBtn.setAttribute('id', x);
+
+            fakeBtn.addEventListener('mouseover', trollAll);
+
+            let text = document.createElement('p');
+            text.style.margin = 'auto';
+            text.innerText = 'Click me!';
+            fakeBtn.append(text);
+
+            let body = document.querySelector('body');
+            console.log(body);
+
+            realBtn = document.querySelector('.troll');
+            realBtn.append(fakeBtn);
+
+            fakeBtn.style.position = 'absolute';
+
+            console.log(document.querySelectorAll('.trollFake'));
+            
+            body.style.cursor = 'none';
+
+        }
+    }
+
+    difficulty.remove();
+
+    btn.style.position = 'relative';
+    randomCoords(fakeBtn);
+    randomCoords(btn);
+}
+
+function troll() {
+    console.log('mouse over');  
+    let location = document.querySelector('.troll');
+
+    randomCoords(location);
+
+}
+
+function trollAll() {
+    let location = document.querySelectorAll('.trollFake');
+    console.log(location);
+    for (let x = 0; x <= location.length; x++) {
+        randomCoords(location[x]);
+        troll();
     }
 }
 
-let clickEasy = document.querySelector('#easy').addEventListener("click", spawnButton);
-let clickHard = document.querySelector('#hard').addEventListener("click", spawnButton);
+let clickEasy = document.querySelector('#easy').addEventListener("click", easy);
+let clickMedium = document.querySelector('#medium').addEventListener("click", medium);
+let clickHard = document.querySelector('#hard').addEventListener("click", hard);
 
 function spongebob() {
     let body = document.querySelector('div').parentElement;
@@ -73,4 +135,3 @@ function spongebob() {
 
 }
 
-trollHover.addEventListener("onmouseover", troll);
