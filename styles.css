@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+body {
+    background-color: rgb(17, 17, 17);
+}
+
+html, body {
+    height: 100%; overflow: hidden
+}
+
+p {
+    background: url(ocean.jpg) no-repeat;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.paragraphs {
+    grid-column: 1;
+}
+
+* {
+    font-size: 100%;
+    font-family: 'Pixelify Sans', sans-serif;
+   }
+
+#center {
+    padding-top: 60px;
+    text-align: left;
+    margin: auto;
+    width:400px;
+    justify-content: center;
+    align-items: center;
+}
