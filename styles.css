@@ -9,7 +9,7 @@ html, body {
 }
 
 p {
-    background: url(ocean.jpg) no-repeat;
+    background: url(wood.jpg) no-repeat;
     -webkit-background-clip: text;
     color: transparent;
 }
@@ -30,4 +30,10 @@ p {
     width:400px;
     justify-content: center;
     align-items: center;
+}
+
+#moon {
+    right:0;
+    padding:20px;
+    margin:0;
 }
