@@ -4,6 +4,34 @@ body {
     background-color: rgb(17, 17, 17);
 }
 
+body.dark {
+    background-color: rgb(17, 17, 17);
+    animation-duration: 1s;
+    animation-name: light-dark;
+}
+
+body.light {
+    background-color: white;
+    animation-duration: 1s;
+    animation-name: dark-light;
+}
+
+p.light {
+    background: url(obsidian.jpg) no-repeat;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@keyframes dark-light {
+    from {background-color: rgb(17, 17, 17);}
+    to {background-color: white;}
+}
+
+@keyframes light-dark {
+    from {background-color: white;}
+    to {background-color:rgb(17, 17, 17);}
+}
+
 html, body {
     height: 100%; overflow: hidden
 }
@@ -14,26 +42,25 @@ p {
     color: transparent;
 }
 
-.paragraphs {
-    grid-column: 1;
-}
-
 * {
     font-size: 100%;
-    font-family: 'Pixelify Sans', sans-serif;
+    font-family: 'Pixelify Sans', sans-serif, monospace;
    }
 
 #center {
+    text-wrap: wrap;
     padding-top: 60px;
     text-align: left;
     margin: auto;
-    width:400px;
+    width: 500px;
     justify-content: center;
     align-items: center;
 }
 
-#moon {
+#moon, #sun {
+    cursor: pointer;
     right:0;
-    padding:20px;
+    padding:10px;
     margin:0;
 }
+
