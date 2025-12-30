@@ -6,13 +6,13 @@ body {
 
 body.dark {
     background-color: rgb(17, 17, 17);
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-name: light-dark;
 }
 
 body.light {
     background-color: white;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-name: dark-light;
 }
 
@@ -20,6 +20,16 @@ p.light {
     background: url(obsidian.jpg) no-repeat;
     -webkit-background-clip: text;
     color: transparent;
+    /* animation-duration: 1s;
+    animation-name: text-light; */
+}
+
+p.dark {
+    background: url(wood.jpg) no-repeat;
+    -webkit-background-clip: text;
+    color: transparent;
+    /* animation-duration: 3s;
+    animation-name: text-dark; */
 }
 
 @keyframes dark-light {
@@ -27,10 +37,20 @@ p.light {
     to {background-color: white;}
 }
 
-@keyframes light-dark {
+@keyframes light-dark { 
     from {background-color: white;}
     to {background-color:rgb(17, 17, 17);}
 }
+
+/* @keyframes text-light {
+    from {background: url(wood.jpg) no-repeat;}
+    to {background: url(obsidian.jpg) no-repeat;}
+}
+
+@keyframes text-dark {
+    from {background: url(obsidian.jpg) no-repeat;}
+    to {background: url(wood.jpg) no-repeat;}
+} */
 
 html, body {
     height: 100%; overflow: hidden
