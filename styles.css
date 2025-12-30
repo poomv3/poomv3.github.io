@@ -16,12 +16,19 @@ body.light {
     animation-name: dark-light;
 }
 
-p.light {
+p.light{
     background: url(obsidian.jpg) no-repeat;
     -webkit-background-clip: text;
     color: transparent;
     /* animation-duration: 1s;
     animation-name: text-light; */
+}
+
+a.light {
+    background: url(obsidian.jpg) no-repeat;
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: hue-rotate(-90deg);
 }
 
 p.dark {
@@ -42,21 +49,11 @@ p.dark {
     to {background-color:rgb(17, 17, 17);}
 }
 
-/* @keyframes text-light {
-    from {background: url(wood.jpg) no-repeat;}
-    to {background: url(obsidian.jpg) no-repeat;}
-}
-
-@keyframes text-dark {
-    from {background: url(obsidian.jpg) no-repeat;}
-    to {background: url(wood.jpg) no-repeat;}
-} */
-
 html, body {
     height: 100%; overflow: hidden
 }
 
-p {
+p, li{
     background: url(wood.jpg) no-repeat;
     -webkit-background-clip: text;
     color: transparent;
@@ -66,6 +63,11 @@ p {
     font-size: 100%;
     font-family: 'Pixelify Sans', sans-serif, monospace;
    }
+
+ul, li::before{
+    content: "- ";
+    filter: hue-rotate(90deg);
+}
 
 #center {
     text-wrap: wrap;
