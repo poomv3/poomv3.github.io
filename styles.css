@@ -6,13 +6,13 @@ body {
 
 body.dark {
     background-color: rgb(17, 17, 17);
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
     animation-name: light-dark;
 }
 
 body.light {
     background-color: white;
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
     animation-name: dark-light;
 }
 

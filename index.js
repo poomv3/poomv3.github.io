@@ -32,7 +32,7 @@ function lightMode() {
         sun.src = "sun (1).svg";
         console.log(1);
     } else {
-        tog.classList.toggle("dark");
+        document.querySelector("body").style.transition = "all 0.3s"
         let moon = document.querySelector(".mode");
         moon.id = "moon";
         moon.src = "moon (2).svg";
