@@ -79,6 +79,11 @@ ul, li::before{
     align-items: center;
 }
 
+iframe {
+    height: "100%";
+    width: "500px"
+}
+
 #moon, #sun {
     cursor: pointer;
     right:0;

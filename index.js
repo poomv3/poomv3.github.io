@@ -21,13 +21,13 @@ let dark = true;
 function lightMode() {
     let tog = document.querySelector("body");
     let para = document.querySelectorAll("p");
-    let li = document.querySelectorAll("li")
+    let h1 = document.querySelectorAll("h1")
     tog.classList.toggle("light");
     for (let x = 0; x < para.length; x++) {
         para[x].classList.toggle("light");
     }
-    for (let y = 0; y < li.length; y++) {
-        li[y].classList.toggle("light");
+    for (let y = 0; y < h1.length; y++) {
+        h1[y].classList.toggle("light");
     }
     console.log(tog.className)
     if (tog.className == "light") {
