@@ -67,6 +67,7 @@ p, li{
 ul, li::before{
     content: "- ";
     filter: hue-rotate(90deg);
+    filter: brightness(150%);
 }
 
 #center {
