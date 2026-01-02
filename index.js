@@ -42,12 +42,25 @@ function lightMode() {
         moon.src = "moon (2).svg";
         console.log(2);
     }
+}
 
-    
+function titleChange() {
+    // const t = ["▁▂▃▄▅▆▇", "▂▁▂▃▄▅▆", "▃▂▁▂▃▄▅", "▄▃▂▁▂▃▄", "▅▄▃▂▁▂▃", "▆▅▄▃▂▁▂", "▇▆▅▄▃▂▁", "▆▇▆▅▄▃▂", "▅▆▇▆▅▄▃", "▄▅▆▇▆▅▄", "▃▄▅▆▇▆▅", "▂▃▄▅▆▇▆"];
+    // const t = ["portfolio", "oportfoli","ioportfol","lioportfo","olioportf","folioport","tfoliopor","rtfoliopo","ortfoliop"]
+    const title = ["▇▇ ▇▇▇▇▇▇▇","m▇ ▇▇▇▇▇▇▇","my ▇▇▇▇▇▇▇","my w▇▇▇▇▇▇","my we▇▇▇▇▇","my web▇▇▇▇","my webs▇▇▇","my websi▇▇","my websit▇","my website","▇▇ ▇▇▇▇▇▇▇","my website","▇▇ ▇▇▇▇▇▇▇","my website","▇▇ ▇▇▇▇▇▇▇","my website"]
+    function timer() {
+        z >= title.length - 1 ? z = 0 : z++,
+        document.title = title[z],
+        setTimeout(timer, 400)
+    }
+    let z = 0;
+    timer()
 }
 
 let mode = document.querySelector(".mode");
 mode.addEventListener("click", lightMode);
+titleChange();
+
 
 
 
